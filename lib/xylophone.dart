@@ -13,6 +13,7 @@ class Xylophone extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           TextButton(
             child: Text(''),
@@ -21,6 +22,7 @@ class Xylophone extends StatelessWidget {
             },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+              padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(0),),
             ),
           ),
           TextButton(
@@ -30,6 +32,7 @@ class Xylophone extends StatelessWidget {
             },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(Colors.orange),
+              padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(0),),
             ),
           ),
           TextButton(
