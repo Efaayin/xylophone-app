@@ -9,11 +9,6 @@ class Xylophone extends StatelessWidget {
     player.play('note$toneNumber.wav');
   }
 
-  void playSound2() {
-    final player = AudioCache();
-    player.play('cricket.m4a');
-  }
-
   Expanded buildKey({required int soundTone, required Color color}) {
     return Expanded(
       child: TextButton(
