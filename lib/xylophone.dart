@@ -9,24 +9,30 @@ class Xylophone extends StatelessWidget {
     player.play('note$toneNumber.wav');
   }
 
+  Widget buildKey() {
+    return Expanded(
+      child: TextButton(
+        child: Text(''),
+        onPressed: () {
+          playSound(1);
+        },
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+          padding: MaterialStateProperty.all<EdgeInsets>(
+            EdgeInsets.all(0),
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
-            child: TextButton(
-              child: Text(''),
-              onPressed: () {
-                playSound(1);
-              },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(0),),
-              ),
-            ),
-          ),
+          buildKey(),
           Expanded(
             child: TextButton(
               child: Text(''),
@@ -34,8 +40,11 @@ class Xylophone extends StatelessWidget {
                 playSound(2);
               },
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.orange),
-                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(0),),
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.orange),
+                padding: MaterialStateProperty.all<EdgeInsets>(
+                  EdgeInsets.all(0),
+                ),
               ),
             ),
           ),
@@ -46,7 +55,8 @@ class Xylophone extends StatelessWidget {
                 playSound(3);
               },
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.yellow),
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.yellow),
               ),
             ),
           ),
@@ -79,7 +89,8 @@ class Xylophone extends StatelessWidget {
                 playSound(6);
               },
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.indigo),
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.indigo),
               ),
             ),
           ),
@@ -90,7 +101,8 @@ class Xylophone extends StatelessWidget {
                 playSound(7);
               },
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.purple),
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.purple),
               ),
             ),
           ),
